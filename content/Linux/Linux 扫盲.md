@@ -11,6 +11,7 @@ done: true
 ```Shell
 sudo passwd root
 ```
+
 ## 1.2 Linux 的网络配置  
 ### 1.2.1 配置 IP 地址  
 配置路径：`/etc/network/interfaces`  
@@ -29,6 +30,7 @@ iface <ens-name> inet DHCP
 ### 1.2.2 配置 DNS
 配置路径：`/etc/resolv.conf`
 添加 `name <IP>`，即可添加 DNS 服务器
+
 ### 1.2.3 重启网络服务
 ```Shell
 systemctl restart networking
@@ -36,7 +38,6 @@ systemctl restart nreworking.service
 dhclient # 自动获取IP
 ```
 ## 1.3 设置 apt 源
-
 配置路径：`/etc/apt/sources.list`
 1. 清华大学镜像站：[清华大学 TUNA 协会](https://tuna.moe/)
 	- [kali | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror](https://mirrors.tuna.tsinghua.edu.cn/help/kali/)
@@ -54,6 +55,7 @@ apt-get upgrade   # 升级已安装的软件包
 apt-get clean     # 清除 apt 缓存
 apt-get full-upgrade -y    # 更新到最新发行版
 ```
+
 ## 1.4 配置 python
 ### 1.4.1 下载 pip
 Kali 已经默认安装了 python2.7 和 python3.9，需要手动安装 pip，如果需要可以配置国内的 pip 下载源。
@@ -67,6 +69,7 @@ python3 get-pip.py
 pip2 list
 pip3 list
 ```
+
 ### 1.4.2 配置 pip 国内镜像源
 [pypi | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/)
 ```Shell
@@ -75,6 +78,7 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 # 以 pdm 方式设置默认源
 pdm config pypi.url https://pypi.tuna.tsinghua.edu.cn/simple
 ```
+
 ## 1.5 配置 ssh
 ssh 是 secure shell 的缩写，是建立在应用层基础上的安全协议。为远程登录会话和其他网络服务提供安全性的协议。
 配置文件路径：`/etc/ssh/sshd_config`
@@ -139,6 +143,7 @@ update-rc.d ssh enable
 | **cp**    | 复制文件或目录                | `cp [options] source... directory`<br>`-r`：可以将目录下的所有文件复制到新目录下。                                              |
 | **rm**    | 删除一个文件或目录              | `rm [options] name...`<br>`-i`：每次删除前进行询问；<br>`-f`：忽略不存在的文件和参数，删除前不进行确认；<br>`-r`：递归删除目录及其内容，经常会配合使用：`rm -rf` |
 | **mv**    | 用来对文件或目录重新命名，或者将文件进行移动 | 如果将一个文件移到一个已经存在的目标文件中，则目标文件的内容将会被覆盖。  <br>`mv`类似文件“搬家”，文件个数并未增加；`cp`对文件进行复制，文件个数增加。                         |
+
 # 5. Vim 编辑器
 ---
 [GitHub - HanielF/VimTutor: VimTutor 中英对照版，给所有想入门Vim的Vimer](https://github.com/HanielF/VimTutor)
