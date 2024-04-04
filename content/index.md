@@ -1,11 +1,5 @@
 ---
 title: 欢迎来到 yiscook 的博客
-tags:
-  - 计算机网络
-  - 渗透测试
-  - web安全
-  - Windows
-  - Linux
 ---
 >[!note]
 >这里是 yiscook 的博客，记录并分享一些自己的学习过程。  
