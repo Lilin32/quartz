@@ -18,12 +18,12 @@ done: true
 - **config**：存储仓库的配置信息，如远程仓库的 URL、用户名和邮箱等。  
 - **description**：用于 GitWeb 等工具显示仓库的描述信息。  
 - **index**：包含了暂存区（stage）的内容，记录了即将提交的文件和相关元数据。  
-- **hooks 文件夹**：包含一系列的钩子脚本，这些脚本可以在 Git 的各个阶段（如提交、变基、拉取等）自动执行。  
-- **info 文件夹**：包含一些辅助性的信息。  
-- **objects 文件夹**：存储所有的 Git 对象，包括提交（commit）、树（tree）和 blob 对象。这些对象被压缩并存储在该目录下。内容经过 **zlib** 压缩。  
-	- **pack**：包含打包的对象数据。
-- **refs 文件夹**：包含指向提交的引用，如分支（branches）和标签（tags）。
-- **logs 文件夹**：存储了每个引用（分支、标签等）的修改历史。  
+- **hooks 目录**：包含一系列的钩子脚本，这些脚本可以在 Git 的各个阶段（如提交、变基、拉取等）自动执行。  
+- **info 目录**：包含一些辅助性的信息。  
+- **objects 目录**：存储所有的 Git 对象，包括提交（commit）、树（tree）和 blob 对象。这些对象被压缩并存储在该目录下。内容经过 **zlib** 压缩。  
+	- **pack 目录**：包含打包的对象数据。
+- **refs 目录**：包含指向提交的引用，如分支（branches）和标签（tags）。
+- **logs 目录**：存储了每个引用（分支、标签等）的修改历史。  
 
 在 `.git/objects` 目录下，每个对象都被存储为一个以 40 个字符的 SHA-1 值命名的文件，前两个字符作为目录名，后 38 个字符作为文件名。  
 在 git 中，每个对象都可以通过唯一的 SHA-1 值来引用和访问。  
@@ -103,4 +103,10 @@ done: true
 ---
 [GitHub - gakki429/Git\_Extract: 提取远程 git 泄露或本地 git 的工具](https://github.com/gakki429/Git_Extract)  
 [GitHub - lijiejie/GitHack: A \`.git\` folder disclosure exploit](https://github.com/lijiejie/GitHack)  
+[GitHub - 0xHJK/dumpall: 一款信息泄漏利用工具，适用于.git/.svn/.DS\_Store泄漏和目录列出](https://github.com/0xHJK/dumpall)  
 
+# 5. 漏洞修复和预防  
+---
+1. 删除 `.git` 文件夹。  
+2. 重置泄露的信息和凭证等。例如： `.git` 文件包含了密钥，私钥等敏感信息，需要重置此内容。  
+3. 更新访问控制权限，严禁访问 `.git` 相关路径。  
