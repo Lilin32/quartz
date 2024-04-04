@@ -1,5 +1,5 @@
 ---
-title: 10. XXE-XML 外部实体注入攻击
+title: XXE-XML 外部实体注入攻击
 tags:
   - web安全
 creation date: 2024-03-20

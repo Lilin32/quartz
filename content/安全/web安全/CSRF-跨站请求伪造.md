@@ -1,5 +1,5 @@
 ---
-title: 9. CSRF-跨站请求伪造
+title: CSRF-跨站请求伪造
 tags:
   - web安全
 creation date: 2024-03-19

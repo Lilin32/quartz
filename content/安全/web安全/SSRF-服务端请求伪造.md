@@ -1,5 +1,5 @@
 ---
-title: 6. SSRF-服务端请求伪造
+title: SSRF-服务端请求伪造
 tags:
   - web安全
 creation date: 2024-03-17

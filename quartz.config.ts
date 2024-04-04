@@ -14,7 +14,7 @@ const config: QuartzConfig = {
     analytics: {
       provider: "plausible",
     },
-    locale: "zh-CN",
+    locale: "en-US",
     baseUrl: "blog.yiscook.top",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",

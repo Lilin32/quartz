@@ -1,5 +1,5 @@
 ---
-title: 7. SQL注入
+title: SQL注入
 tags:
   - web安全
 creation date: 2024-03-17
