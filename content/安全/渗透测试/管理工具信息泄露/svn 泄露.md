@@ -12,7 +12,7 @@ done: true
 > 管理员操作不规范，在发布代码时未使用导出功能，而是直接复制代码文件夹到 WEB 服务器上，导致 `.svn` 被暴露于外网环境。    
 > `.svn` 目录下还包含了以 `.svn-base` 结尾的源代码文件副本(低版本路径为 text-base，高版本路径为 pristine 目录)，若服务器没有对此类后缀做解析或者访问限制，攻击者可以直接获得网站源码。  
 
-# 1. svn 目录结构  
+# 1. .svn 目录结构  
 ---
 - **entries**：包含了当前工作副本的元数据，包括文件的目录列表和版本号。  
 - **format**：该文件包含了.svn 目录的版本号。它用于确保.svn 目录的兼容性和正确性。  
@@ -42,7 +42,7 @@ done: true
 - `checksum`：文件内容的校验和，用于比较文件的变化。可以配合 `.svn/pristine` 目录获取到文件内容。  
 
 [GitHub - 0xHJK/dumpall: 一款信息泄漏利用工具，适用于.git/.svn/.DS\_Store泄漏和目录列出](https://github.com/0xHJK/dumpall)  
-[GitHub - 0xHJK/dumpall: 一款信息泄漏利用工具，适用于.git/.svn/.DS\_Store泄漏和目录列出](https://github.com/0xHJK/dumpall)  
+[GitHub - admintony/svnExploit: SvnExploit支持SVN源代码泄露全版本Dump源码](https://github.com/admintony/svnExploit)  
 
 # 3. 漏洞修复和预防  
 ---

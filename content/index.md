@@ -21,6 +21,7 @@ title: 欢迎来到 yiscook 的博客
 - 管理工具信息泄露  
 	- [[git 泄露]]  
 	- [[svn 泄露]]  
+	- [[DS_Store 泄露]]  
 
 # Linux  
 [[Linux 扫盲]]  
