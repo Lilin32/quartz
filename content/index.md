@@ -22,6 +22,8 @@ title: 欢迎来到 yiscook 的博客
 	- [[git 泄露]]  
 	- [[svn 泄露]]  
 	- [[DS_Store 泄露]]  
+- 未授权访问漏洞
+	- [[Redis 未授权访问漏洞]]
 
 # Linux  
 [[Linux 扫盲]]  
