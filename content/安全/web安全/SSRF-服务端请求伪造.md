@@ -104,7 +104,7 @@ gopher 协议需要传输的内容是二进制数据流，而 URL 编码可以�
 
 ### 4.2.4 使用解析到内网的域名  
 如果服务端没有先解析 IP 地址再进行过滤，可以尝试使用 `localhost` 或者 `sslip.io`， `nip.io`，来进行绕过。  
-例如：想要访问 `192.168.0.100`，可以尝试使用 `192.168.0.100. sslip.io` 或 `192.168.0.100. nip.io`   
+例如：想要访问 `192.168.0.100`，可以尝试使用 `192.168.0.100.sslip.io` 或 `192.168.0.100. nip.io`   
 `xip.io` 已经停止服务。  
 `sslip.io` 使用方法：[Welcome to sslip.io](https://sslip.io/)  
 `nip.io` 使用方法：[nip.io - wildcard DNS for any IP Address](https://nip.io/)  
